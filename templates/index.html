@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="F1 Racing Analytics dashboard built with Tableau Public.">
+    <title>F1 Racing Analytics</title>
+    <!-- Inline favicon: avoids the browser's automatic /favicon.ico 404 request. -->
+    <link rel="icon" href="data:,">
+
+    <style>
+        :root {
+            color-scheme: dark;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #101114;
+            color: #f5f5f5;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: #101114;
+        }
+
+        .page-header {
+            padding: 28px 5%;
+            border-bottom: 1px solid #292a30;
+            background: #17181d;
+        }
+
+        .header-content {
+            width: min(1440px, 100%);
+            margin: 0 auto;
+        }
+
+        .eyebrow {
+            margin: 0 0 8px;
+            color: #ff4545;
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            line-height: 1.1;
+        }
+
+        .intro {
+            max-width: 680px;
+            margin: 12px 0 0;
+            color: #b7b8c0;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        main {
+            width: min(1600px, 100%);
+            margin: 0 auto;
+            padding: 28px 3% 48px;
+        }
+
+        .dashboard-heading {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0 0 16px;
+            color: #e9e9ec;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .dashboard-heading::before {
+            width: 4px;
+            height: 19px;
+            border-radius: 4px;
+            background: #ff4545;
+            content: "";
+        }
+
+        .tableau-frame {
+            width: 100%;
+            overflow: hidden;
+            border: 1px solid #303139;
+            border-radius: 12px;
+            background: #fff;
+            box-shadow: 0 18px 50px rgb(0 0 0 / 25%);
+        }
+
+        .tableau-frame iframe {
+            display: block;
+            width: 100%;
+            height: 900px;
+            border: 0;
+        }
+
+        .dashboard-fallback {
+            padding: 14px 18px;
+            color: #b7b8c0;
+            font-size: .9rem;
+        }
+
+        .dashboard-fallback a {
+            color: #ff7777;
+        }
+
+        .page-footer {
+            padding: 18px 5%;
+            border-top: 1px solid #292a30;
+            color: #858690;
+            font-size: .8rem;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .page-header { padding: 22px 5%; }
+            main { padding: 20px 0 32px; }
+            .dashboard-heading { margin: 0 5% 12px; }
+            .tableau-frame {
+                border-right: 0;
+                border-left: 0;
+                border-radius: 0;
+            }
+            .tableau-frame iframe { height: 1100px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="page-header">
+        <div class="header-content">
+            <p class="eyebrow">Motorsport data &amp; insights</p>
+            <h1>F1 Racing Analytics</h1>
+            <p class="intro">
+                Explore the Formula 1 racing analytics dashboard, built with Tableau Public.
+            </p>
+        </div>
+    </header>
+
+    <main>
+        <h2 class="dashboard-heading">Interactive dashboard</h2>
+
+        <div class="tableau-frame">
+            <iframe
+                title="F1 Racing Analytics Tableau dashboard"
+                src="https://public.tableau.com/views/F1_racing_17936297010240/F1RACINGANALYTICS?:showVizHome=no&amp;:embed=true&amp;:toolbar=yes"
+                loading="lazy"
+                allowfullscreen>
+            </iframe>
+            <p class="dashboard-fallback">
+                Having trouble viewing the dashboard?
+                <a href="https://public.tableau.com/views/F1_racing_17936297010240/F1RACINGANALYTICS"
+                   target="_blank" rel="noopener noreferrer">Open it directly on Tableau Public</a>.
+            </p>
+        </div>
+    </main>
+
+    <footer class="page-footer">
+        F1 Racing Analytics · Data visualization powered by Tableau Public
+    </footer>
+</body>
+</html>
